@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Srota Bio is building a clinician-led online care programme that brings medical guidance and practical lifestyle support together for PCOS."
+    />
+    <meta name="theme-color" content="" />
+    <meta property="og:title" content="Srota Bio — Connected PCOS care" />
+    <meta
+      property="og:description"
+      content="PCOS care shouldn't feel fragmented. Join the Srota Bio waitlist."
+    />
+    <meta property="og:type" content="website" />
+    <title>Srota Bio — Connected PCOS care</title>
+
+    <link rel="icon" type="image/png" href="./assets/logo-mark.png" />
+    <link rel="stylesheet" href="./theme.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./site-config.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Srota Bio home">
+        <img
+          class="brand__mark"
+          src="./assets/logo-mark.png"
+          alt=""
+          width="44"
+          height="44"
+        />
+        <span class="brand__name">Srota <strong>Bio</strong></span>
+      </a>
+      <a class="button button--small button--quiet" href="#waitlist">
+        Join the waitlist
+      </a>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero__copy">
+          <p class="eyebrow">Building a more connected approach to PCOS care</p>
+          <h1>PCOS care shouldn’t feel fragmented.</h1>
+          <p class="hero__summary">
+            Srota Bio is building a clinician-led online care programme that
+            brings medical guidance and practical lifestyle support together.
+          </p>
+          <div class="hero__actions">
+            <a class="button" href="#waitlist">Join the waitlist</a>
+            <span class="hero__note">Be among the first to hear when we launch.</span>
+          </div>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <span class="hero__ring hero__ring--outer"></span>
+          <span class="hero__ring hero__ring--inner"></span>
+          <img
+            class="hero__mark"
+            src="./assets/logo-mark.png"
+            alt=""
+            width="360"
+            height="360"
+          />
+        </div>
+      </section>
+
+      <section class="approach" aria-labelledby="approach-title">
+        <div class="section-heading">
+          <p class="eyebrow">One connected approach</p>
+          <h2 id="approach-title">Support designed around the whole picture.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature__number" aria-hidden="true">01</span>
+            <h3>Personalised clinical guidance</h3>
+            <p>Care designed around your history, goals and changing needs.</p>
+          </article>
+
+          <article class="feature">
+            <span class="feature__number" aria-hidden="true">02</span>
+            <h3>Practical lifestyle support</h3>
+            <p>Nutrition and movement guidance made to work in everyday life.</p>
+          </article>
+
+          <article class="feature">
+            <span class="feature__number" aria-hidden="true">03</span>
+            <h3>Ongoing follow-through</h3>
+            <p>Support to understand your condition and stay connected to care.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="waitlist" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="waitlist__copy">
+          <p class="eyebrow">Coming soon</p>
+          <h2 id="waitlist-title">Join the Srota Bio waitlist.</h2>
+          <p>
+            Leave your email and we’ll let you know when early access becomes
+            available.
+          </p>
+        </div>
+
+        <form class="waitlist-form" id="waitlist-form" novalidate>
+          <label class="sr-only" for="email">Email address</label>
+          <div class="waitlist-form__controls">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button class="button" type="submit">Join the waitlist</button>
+          </div>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="company">Leave this field empty</label>
+            <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <input name="source" type="hidden" value="srota-bio-landing-page" />
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-privacy">
+            We’ll only use your email for Srota Bio updates. You can unsubscribe
+            at any time.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Srota Bio is an early-stage concept under development and is not
+        currently providing diagnosis, medical advice or treatment through this
+        website. Any future clinical decisions, including medication, will be
+        made by qualified clinicians.
+      </p>
+      <p class="site-footer__copyright">© <span id="year"></span> Srota Bio</p>
+    </footer>
+  </body>
+</html>
