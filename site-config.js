@@ -1,3 +1,3 @@
 window.SROTA_SITE_CONFIG = {
-  waitlistEndpoint: "https://api.srotabio.com",
+  waitlistEndpoint: "https://api.srotabio.com/api/waitlist",
 };
