@@ -32,16 +32,17 @@
   /* Decorative treatments */
   --color-header-background: rgba(250, 247, 242, 0.88);
   --color-hero-glow: rgba(232, 210, 208, 0.58);
-  --color-art-surface: rgba(255, 255, 255, 0.7);
-  --color-art-ring: rgba(87, 59, 88, 0.12);
-  --color-art-ring-strong: rgba(156, 181, 163, 0.46);
-  --shadow-soft: 0 24px 80px rgba(87, 59, 88, 0.12);
   --shadow-button: 0 12px 28px rgba(87, 59, 88, 0.2);
-  --gradient-hero: linear-gradient(145deg, var(--color-art-surface), var(--color-brand-primary-soft));
 
   /* Type and shape */
   --font-body: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: Georgia, "Times New Roman", serif;
+  --font-size-display: clamp(3.15rem, 6.5vw, 5.9rem);
+  --font-size-heading: clamp(2.25rem, 4vw, 3.75rem);
+  --font-size-subheading: clamp(1.2rem, 1.7vw, 1.4rem);
+  --font-size-body-large: clamp(1.05rem, 1.35vw, 1.18rem);
+  --font-size-card-number: clamp(1.3rem, 2vw, 1.65rem);
+  --space-section-gap: clamp(4rem, 7vw, 6.25rem);
   --radius-small: 0.75rem;
   --radius-medium: 1.25rem;
   --radius-large: 2rem;
