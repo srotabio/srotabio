@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">SrotaBio muggu ground</title>
+  <desc id="desc">A 24 pixel point field with one straight Madder channel at the locked Srota system angle.</desc>
+  <defs>
+    <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#C9B79A"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="750" fill="#F3EADA"/>
+  <rect width="1200" height="750" fill="url(#dot-grid)"/>
+  <path d="M296 750 L904 0" fill="none" stroke="#9E3B2E" stroke-width="8" opacity=".40"/>
+  <circle cx="600" cy="375" r="18" fill="#9E3B2E" opacity=".70"/>
+</svg>

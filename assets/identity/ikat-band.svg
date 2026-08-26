@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">SrotaBio ikat band</title>
+  <desc id="desc">Parallel solid and broken channels at the Srota system angle on an Iron field.</desc>
+  <rect width="1200" height="500" fill="#2A2320"/>
+  <g fill="none" transform="scale(2.78)">
+    <path d="M-160 180 L-14.5 0 M-120 180 L25.5 0 M-80 180 L65.5 0 M-40 180 L105.5 0 M0 180 L145.5 0 M40 180 L185.5 0 M80 180 L225.5 0 M120 180 L265.5 0 M160 180 L305.5 0 M200 180 L345.5 0 M240 180 L385.5 0 M280 180 L425.5 0 M320 180 L465.5 0" stroke="#C08A2E" stroke-width="2" opacity=".55"/>
+    <path d="M-140 180 L5.5 0 M-60 180 L85.5 0 M20 180 L165.5 0 M100 180 L245.5 0 M180 180 L325.5 0 M260 180 L405.5 0 M340 180 L485.5 0" stroke="#F3EADA" stroke-width="4" stroke-dasharray="14 10"/>
+  </g>
+</svg>
