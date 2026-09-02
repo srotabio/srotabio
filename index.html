@@ -16,10 +16,11 @@
     <meta property="og:type" content="website" />
     <title>SrotaBio — Connected care for women’s health</title>
 
-    <link rel="icon" href="./favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
-    <link rel="stylesheet" href="./theme.css" />
+    <meta property="og:site_name" content="SrotaBio" />
+    <link rel="icon" href="./assets/identity/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/identity/apple-touch-icon.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./brand-refresh.css" />
     <script defer src="./site-config.js"></script>
     <script defer src="./script.js"></script>
   </head>
@@ -29,23 +30,24 @@
     <header class="site-header" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="SrotaBio home">
         <img
-          class="brand__logo"
-          src="./assets/identity/srotabio-primary-horizontal.svg"
+          class="brand__wordmark"
+          src="./assets/identity/srotabio-wordmark-light.png"
           alt="SrotaBio"
-          width="178"
-          height="52"
+          width="1030"
+          height="230"
         />
       </a>
-      <a class="button button--small button--quiet" href="#waitlist">
-        Join the waitlist
-      </a>
+      <nav class="site-nav" aria-label="Page navigation">
+        <a class="site-nav__link" href="#model">Our approach</a>
+        <a class="button button--small button--quiet" href="#waitlist">Join the waitlist</a>
+      </nav>
     </header>
 
     <main id="main-content">
       <section class="hero" id="top">
         <div class="hero__copy">
-          <p class="eyebrow">Women’s health, understood in context</p>
-          <h1>Women’s health is connected. Care should be too.</h1>
+          <p class="eyebrow">Clinician-led care · Built to stay connected</p>
+          <h1>Women’s health is connected. <span>Care should be too.</span></h1>
           <p class="hero__summary">
             SrotaBio is building clinician-led online care for women with
             polyendocrine metabolic ovarian syndrome (PMOS), formerly PCOS—bringing
@@ -54,30 +56,47 @@
           </p>
           <div class="hero__actions">
             <a class="button" href="#waitlist">Join the early-access list</a>
-            <span class="hero__note">Be among the first to hear as the care model develops.</span>
+            <span class="hero__note">Follow the work as the care model develops.</span>
           </div>
         </div>
 
-        <div class="hero__art" aria-hidden="true">
-          <img
-            class="hero__monogram"
-            src="./assets/identity/srotabio-monogram-full-color.svg"
-            alt=""
-            width="120"
-            height="100"
-          />
-          <p class="care-map__eyebrow">Flow from the source</p>
-          <div class="care-map">
-            <span class="care-map__node care-map__node--context">Your context</span>
-            <span class="care-map__node care-map__node--clinical">Clinical guidance</span>
-            <span class="care-map__node care-map__node--support">Everyday support</span>
-            <span class="care-map__node care-map__node--follow">Follow-through</span>
-            <span class="care-map__channel"></span>
+        <aside class="journey" aria-labelledby="journey-title">
+          <div class="journey__header">
+            <div>
+              <p class="journey__kicker">Proposed care model</p>
+              <h2 id="journey-title">One connected journey</h2>
+            </div>
+            <img
+              class="journey__icon"
+              src="./assets/identity/apple-touch-icon.png"
+              alt=""
+              width="76"
+              height="76"
+            />
           </div>
-        </div>
+          <ol class="journey__steps">
+            <li>
+              <span class="journey__number">01</span>
+              <span><strong>Understand context</strong>History, symptoms and priorities</span>
+            </li>
+            <li>
+              <span class="journey__number">02</span>
+              <span><strong>Assess clinically</strong>Clinician-owned judgment and decisions</span>
+            </li>
+            <li>
+              <span class="journey__number">03</span>
+              <span><strong>Support everyday care</strong>Nutrition, movement and adherence</span>
+            </li>
+            <li>
+              <span class="journey__number">04</span>
+              <span><strong>Follow through</strong>Progress that informs the next step</span>
+            </li>
+          </ol>
+          <p class="journey__footer">Each step is designed to inform the next.</p>
+        </aside>
       </section>
 
-      <section class="approach" aria-labelledby="approach-title">
+      <section class="approach" id="model" aria-labelledby="approach-title">
         <div class="section-heading">
           <p class="eyebrow">The model we’re building</p>
           <div class="section-heading__body">
@@ -85,13 +104,14 @@
             <p>
               Health rarely arrives in separate boxes. The SrotaBio model is being
               designed to connect context, clinical judgment and practical support
-              without blurring who is responsible for care.
+              while keeping responsibility for care clear.
             </p>
           </div>
         </div>
 
         <div class="feature-grid">
           <article class="feature">
+            <span class="feature__number">01</span>
             <span class="feature__label">Context</span>
             <h3>Start with the whole picture</h3>
             <p>
@@ -101,6 +121,7 @@
           </article>
 
           <article class="feature">
+            <span class="feature__number">02</span>
             <span class="feature__label">Clinical ownership</span>
             <h3>Keep clinical decisions clinical</h3>
             <p>
@@ -110,6 +131,7 @@
           </article>
 
           <article class="feature">
+            <span class="feature__number">03</span>
             <span class="feature__label">Continuity</span>
             <h3>Support what happens between visits</h3>
             <p>
@@ -122,13 +144,13 @@
 
       <section class="condition" aria-labelledby="condition-title">
         <div class="condition__copy">
-          <p class="eyebrow">PCOS is now PMOS</p>
-          <h2 id="condition-title">A name that reflects a more complete picture.</h2>
+          <p class="eyebrow">PMOS, formerly PCOS</p>
+          <h2 id="condition-title">A wider lens for a complex condition.</h2>
           <p>
             Polyendocrine metabolic ovarian syndrome (PMOS) is the new name for the
-            condition previously known as PCOS. The change reflects a complex condition
-            with endocrine, metabolic, reproductive and psychological features—not a
-            problem defined only by ovarian cysts.
+            condition previously known as PCOS. It reflects a condition with endocrine,
+            metabolic, reproductive and psychological features—a more complete picture
+            than ovarian cysts alone.
           </p>
           <a
             class="text-link"
@@ -140,8 +162,14 @@
             <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <div class="condition__figure" aria-hidden="true">
-          <img src="./assets/identity/field-series.svg" alt="" width="1200" height="750" />
+        <div class="condition__signals" aria-label="Interconnected PMOS features">
+          <p>One condition, interconnected features</p>
+          <ul>
+            <li><span aria-hidden="true"></span>Endocrine</li>
+            <li><span aria-hidden="true"></span>Metabolic</li>
+            <li><span aria-hidden="true"></span>Reproductive</li>
+            <li><span aria-hidden="true"></span>Psychological</li>
+          </ul>
         </div>
       </section>
 
@@ -156,7 +184,7 @@
         </div>
 
         <form class="waitlist-form" id="waitlist-form" novalidate>
-          <label class="sr-only" for="email">Email address</label>
+          <label for="email">Email address</label>
           <div class="waitlist-form__controls">
             <input
               id="email"
@@ -164,10 +192,10 @@
               type="email"
               inputmode="email"
               autocomplete="email"
-              placeholder="Enter your email address"
+              placeholder="you@example.com"
               required
             />
-            <button class="button" type="submit">Join the list</button>
+            <button class="button button--lime" type="submit">Join the list</button>
           </div>
 
           <div class="honeypot" aria-hidden="true">
@@ -186,6 +214,13 @@
     </main>
 
     <footer class="site-footer">
+      <img
+        class="site-footer__wordmark"
+        src="./assets/identity/srotabio-wordmark-dark.png"
+        alt="SrotaBio"
+        width="1030"
+        height="230"
+      />
       <p>
         SrotaBio is an early-stage concept under development and is not
         currently providing diagnosis, medical advice or treatment through this

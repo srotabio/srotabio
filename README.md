@@ -1,15 +1,24 @@
 # SrotaBio static landing page
 
-A dependency-free landing page designed for GitHub Pages and aligned to
-SrotaBio identity system 1.1. No build command is required.
+A dependency-free waitlist landing page designed for GitHub Pages and aligned
+to the approved SrotaBio identity package dated 2026-09-02. No build command is
+required.
 
 ## Brand authority
 
-- The 4a Woven SB logo is locked. Use the supplied SVG files unchanged.
-- Martel carries the display and editorial voice; Martel Sans carries body copy and UI.
-- The active palette is Khadi, Chalk, Iron, Iron 70, Madder, Myrobalan, Myrtle and Loom line.
-- Muggu ground, ikat band and field-series graphics remain supporting elements outside the logo.
-- The canonical rules live in `../srota_os/brand_system.md` and `../brand/identity-system/README.md`.
+- Use **SrotaBio** as one word.
+- Cream `#FAF6EC`, Iron `#36384E`, Blue `#7482A8`, Lime `#C4D275` and Slate
+  `#8FA0CC` are the active palette.
+- Manrope is the active wordmark, UI and body family.
+- The supplied rounded-square icon is used for the favicon and app touch icon.
+- The light and dark website wordmarks are exact crops of the approved
+  presentation assets. The supplied OG banner is inactive because it contains
+  rejected copy.
+- The canonical rules live in `../srota_os/brand_system.md` and
+  `../brand/current/README.md`.
+
+The older Martel assets and 4a Woven SB files remain in this repository as
+historical records. The website does not reference them.
 
 ## Before publishing
 
@@ -28,9 +37,9 @@ email address and a non-sensitive source label.
 
 ### 2. Maintain the identity
 
-All colors, shadows, type choices and shape tokens are in `theme.css`. The
-layout in `styles.css` references those variables. Logo construction remains
-fixed; any future theme refinement should preserve the approved brand roles.
+The active 2026-09-02 identity overrides are in `brand-refresh.css`. The
+approved Manrope font and current logo exports live under `assets/`. Preserve
+the canonical wordmark construction and compact-icon use when making changes.
 
 ## Preview locally
 
@@ -56,10 +65,10 @@ GitHub will provide the public URL after the first deployment completes.
 ## Files
 
 - `index.html` — page structure and copy
-- `theme.css` — replaceable visual theme
+- `theme.css` — historical identity tokens retained as an unreferenced record
 - `styles.css` — responsive layout and components
+- `brand-refresh.css` — active approved brand tokens and component overrides
 - `site-config.js` — waitlist service configuration
 - `script.js` — form validation and submission
-- `assets/identity/` — locked logo masters and approved supporting graphics
-- `assets/fonts/` — Martel and Martel Sans web fonts with SIL OFL license
-- `favicon.ico`, `apple-touch-icon.png` — responsive brand icons
+- `assets/identity/` — active wordmarks, icons and favicon plus historical assets
+- `assets/fonts/` — active Manrope font/license plus historical fonts
