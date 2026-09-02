@@ -30,7 +30,7 @@
   --color-header-background: rgba(250, 246, 236, 0.92);
   --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-size-display: clamp(3.4rem, 8.2vw, 7.6rem);
+  --font-size-display: clamp(3.35rem, 6.2vw, 6.4rem);
   --font-size-heading: clamp(2.35rem, 5vw, 4.8rem);
   --font-size-subheading: clamp(1.25rem, 1.8vw, 1.55rem);
   --font-size-body-large: clamp(1.04rem, 1.45vw, 1.25rem);
@@ -59,7 +59,7 @@ h3 {
 }
 
 h1 {
-  max-width: 10.8ch;
+  max-width: 14ch;
   margin-bottom: 1.7rem;
   font-size: var(--font-size-display);
 }
@@ -176,11 +176,15 @@ a:focus-visible {
 
 .hero {
   position: relative;
-  grid-template-columns: minmax(0, 1.18fr) minmax(22rem, 0.82fr);
-  gap: clamp(3rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   min-height: calc(100svh - 6.25rem);
-  margin-bottom: 0;
-  padding-block: clamp(4rem, 8vw, 7.5rem);
+  margin-bottom: var(--space-section-gap);
+  padding-block: clamp(3.75rem, 6vw, 6rem);
+}
+
+.hero__copy {
+  width: min(100%, 68rem);
 }
 
 .hero::before {
@@ -508,13 +512,13 @@ a:focus-visible {
 
 .waitlist {
   grid-template-columns: minmax(0, 0.82fr) minmax(24rem, 1.18fr);
-  gap: clamp(3rem, 8vw, 7rem);
-  align-items: end;
+  gap: clamp(1.75rem, 5vw, 4.5rem);
+  align-items: center;
   margin-bottom: 0;
-  padding: clamp(2rem, 6vw, 5rem);
+  padding: clamp(1.75rem, 4vw, 3.5rem);
   border: 0;
   border-top: 0.6rem solid var(--color-lime);
-  border-radius: var(--radius-large) var(--radius-large) 0 0;
+  border-radius: var(--radius-large);
   background: var(--color-iron);
   color: var(--color-cream);
 }
@@ -536,9 +540,9 @@ a:focus-visible {
 }
 
 .waitlist h2 {
-  max-width: 13ch;
+  max-width: 14ch;
   color: var(--color-cream);
-  font-size: clamp(2.35rem, 4.5vw, 4rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.45rem);
 }
 
 .waitlist__copy p:last-child {
@@ -582,6 +586,10 @@ a:focus-visible {
 .form-privacy {
   color: rgba(250, 246, 236, 0.66);
   opacity: 1;
+}
+
+main {
+  padding-bottom: clamp(2rem, 4vw, 4rem);
 }
 
 .site-footer {
@@ -761,7 +769,8 @@ a:focus-visible {
   }
 
   .waitlist {
-    border-radius: var(--radius-medium) var(--radius-medium) 0 0;
+    gap: 1.75rem;
+    border-radius: var(--radius-medium);
   }
 
   .waitlist-form__controls {
