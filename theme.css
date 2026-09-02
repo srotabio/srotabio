@@ -1,96 +1,50 @@
-/* SrotaBio identity system 1.1 — BrandIdentityCD locked-logo release */
-
-@font-face {
-  font-family: "Martel";
-  src: url("./assets/fonts/Martel-Light.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Martel";
-  src: url("./assets/fonts/Martel-DemiBold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Martel";
-  src: url("./assets/fonts/Martel-ExtraBold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Martel Sans";
-  src: url("./assets/fonts/MartelSans-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Martel Sans";
-  src: url("./assets/fonts/MartelSans-SemiBold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
+/*
+  Srota Bio theme
+  ----------------
+  Change this file to reskin the site. Layout and component styles consume only
+  the semantic tokens below and do not contain their own color values.
+*/
 
 :root {
   color-scheme: light;
 
-  /* Locked natural-dye palette */
-  --color-khadi: #f3eada;
-  --color-chalk: #fbf7ef;
-  --color-iron: #2a2320;
-  --color-iron-70: #5a4b41;
-  --color-madder: #9e3b2e;
-  --color-madder-deep: #7f2f25;
-  --color-myrobalan: #c08a2e;
-  --color-myrtle: #6b7355;
-  --color-loom: #ded2be;
+  /* Brand palette — Sage & Plum */
+  --color-brand-primary: #573b58;
+  --color-brand-primary-hover: #432d44;
+  --color-brand-primary-soft: #eee6ef;
+  --color-brand-secondary: #9cb5a3;
+  --color-brand-secondary-deep: #536c5b;
+  --color-sage-on-plum: #d3dfd6;
+  --color-accent: #e8d2d0;
 
-  /* Semantic roles */
-  --color-brand-primary: var(--color-madder);
-  --color-brand-primary-hover: var(--color-madder-deep);
-  --color-brand-primary-soft: #ead6ca;
-  --color-brand-secondary: var(--color-myrobalan);
-  --color-brand-secondary-deep: var(--color-madder);
-  --color-sage-on-plum: var(--color-khadi);
-  --color-accent: var(--color-myrobalan);
-  --color-background: var(--color-khadi);
-  --color-surface: var(--color-chalk);
-  --color-surface-soft: #eee3d1;
-  --color-text: var(--color-iron);
-  --color-text-muted: var(--color-iron-70);
-  --color-on-brand: var(--color-chalk);
-  --color-border: var(--color-loom);
-  --color-focus: var(--color-myrobalan);
-  --color-success: var(--color-myrtle);
-  --color-error: var(--color-madder);
+  /* Surfaces and typography */
+  --color-background: #faf7f2;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f3eee9;
+  --color-text: #29252b;
+  --color-text-muted: #696169;
+  --color-on-brand: #ffffff;
+  --color-border: #ded5da;
+  --color-focus: #715073;
+  --color-success: #2f6b4f;
+  --color-error: #a13f4e;
 
-  /* Material and depth */
-  --color-header-background: rgba(243, 234, 218, 0.92);
-  --color-hero-glow: rgba(192, 138, 46, 0.15);
-  --shadow-button: 0 0.75rem 1.75rem rgba(42, 35, 32, 0.14);
-  --shadow-panel: 0 1.5rem 4rem rgba(42, 35, 32, 0.1);
-  --shadow-card: 0 0.65rem 1.75rem rgba(42, 35, 32, 0.08);
+  /* Decorative treatments */
+  --color-header-background: rgba(250, 247, 242, 0.88);
+  --color-hero-glow: rgba(232, 210, 208, 0.58);
+  --shadow-button: 0 12px 28px rgba(87, 59, 88, 0.2);
 
-  /* Type, spacing, and shape */
-  --font-body: "Martel Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Martel", Georgia, serif;
-  --font-size-display: clamp(3rem, 6.4vw, 5.75rem);
-  --font-size-heading: clamp(2.15rem, 4vw, 3.8rem);
-  --font-size-subheading: clamp(1.2rem, 1.7vw, 1.45rem);
-  --font-size-body-large: clamp(1.05rem, 1.35vw, 1.2rem);
-  --font-size-card-number: clamp(1.25rem, 2vw, 1.6rem);
-  --space-section-gap: clamp(5rem, 10vw, 9rem);
-  --radius-small: 0.25rem;
-  --radius-medium: 0.5rem;
-  --radius-large: 0.75rem;
-  --radius-pill: 0.3rem;
+  /* Type and shape */
+  --font-body: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-size-display: clamp(3.15rem, 6.5vw, 5.9rem);
+  --font-size-heading: clamp(2.25rem, 4vw, 3.75rem);
+  --font-size-subheading: clamp(1.2rem, 1.7vw, 1.4rem);
+  --font-size-body-large: clamp(1.05rem, 1.35vw, 1.18rem);
+  --font-size-card-number: clamp(1.3rem, 2vw, 1.65rem);
+  --space-section-gap: clamp(4rem, 7vw, 6.25rem);
+  --radius-small: 0.75rem;
+  --radius-medium: 1.25rem;
+  --radius-large: 2rem;
+  --radius-pill: 999px;
 }

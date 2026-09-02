@@ -53,12 +53,12 @@ form?.addEventListener("submit", async (event) => {
     }
 
     form.reset();
-    setStatus("You’re on the list. We’ll be in touch as SrotaBio develops.", "success");
+    setStatus("You’re on the list. We’ll be in touch when Srota Bio is ready.", "success");
   } catch (error) {
     console.error(error);
     setStatus("We couldn’t add you right now. Please try again in a moment.", "error");
   } finally {
     submitButton.disabled = false;
-    submitButton.textContent = "Join the list";
+    submitButton.textContent = "Join the waitlist";
   }
 });
