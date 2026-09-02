@@ -81,9 +81,11 @@ h3 {
 .hero,
 .approach,
 .condition,
+.experts,
 .waitlist,
 .site-footer {
   width: min(100% - 3rem, 82rem);
+  margin-inline: auto;
 }
 
 .site-header {
@@ -510,6 +512,137 @@ a:focus-visible {
   background: var(--color-slate);
 }
 
+.experts {
+  margin-bottom: var(--space-section-gap);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  scroll-margin-top: 7rem;
+}
+
+.experts__heading {
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.experts__heading h2 {
+  margin: 0;
+  color: var(--color-iron);
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+}
+
+.experts__carousel {
+  overflow-x: auto;
+  padding-bottom: 0.85rem;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: var(--color-blue) transparent;
+  scrollbar-width: thin;
+  scroll-snap-type: x mandatory;
+}
+
+.experts__carousel:focus-visible {
+  outline: 3px solid var(--color-lime);
+  outline-offset: 0.35rem;
+}
+
+.experts__carousel::-webkit-scrollbar {
+  height: 0.45rem;
+}
+
+.experts__carousel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--color-blue);
+}
+
+.experts__carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.experts__grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(34rem, calc((100% - 1.5rem) / 2));
+  gap: 1.5rem;
+}
+
+.experts__grid:has(> .expert-card:only-child) {
+  justify-content: center;
+}
+
+.expert-card {
+  display: grid;
+  grid-template-columns: clamp(7.5rem, 12vw, 10rem) minmax(0, 1fr);
+  min-height: 11.5rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.34);
+  scroll-snap-align: start;
+}
+
+.expert-card__portrait {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--color-blue);
+}
+
+.expert-card__photo {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.expert-card__photo[src=""] {
+  display: none;
+}
+
+.expert-card__photo-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: var(--color-cream);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.expert-card__identity {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.expert-card__identity::after {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 3rem);
+  bottom: clamp(1.5rem, 3vw, 2.25rem);
+  width: 3.5rem;
+  height: 0.35rem;
+  background: var(--color-lime);
+  content: "";
+}
+
+.expert-card h3 {
+  max-width: 20ch;
+  margin-bottom: 0.55rem;
+  color: var(--color-iron);
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+}
+
+.expert-card p {
+  max-width: 24rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .waitlist {
   grid-template-columns: minmax(0, 0.82fr) minmax(24rem, 1.18fr);
   gap: clamp(1.75rem, 5vw, 4.5rem);
@@ -521,6 +654,7 @@ a:focus-visible {
   border-radius: var(--radius-large);
   background: var(--color-iron);
   color: var(--color-cream);
+  scroll-margin-top: 7rem;
 }
 
 .waitlist::after {
@@ -637,6 +771,10 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .experts__grid {
+    grid-auto-columns: minmax(27rem, 82%);
+  }
+
   .feature-grid {
     grid-template-columns: 1fr;
   }
@@ -683,6 +821,7 @@ main {
   .hero,
   .approach,
   .condition,
+  .experts,
   .waitlist,
   .site-footer {
     width: min(100% - 1.25rem, 82rem);
@@ -751,6 +890,29 @@ main {
   .section-heading {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+  }
+
+  .experts__heading {
+    margin-bottom: 1.75rem;
+  }
+
+  .experts__grid {
+    grid-auto-columns: 100%;
+  }
+
+  .expert-card {
+    grid-template-columns: 6.25rem minmax(0, 1fr);
+    min-height: 9.5rem;
+  }
+
+  .expert-card__identity {
+    padding: 1.35rem;
+  }
+
+  .expert-card__identity::after {
+    right: 1.35rem;
+    bottom: 1.35rem;
+    width: 2.5rem;
   }
 
   .condition,
