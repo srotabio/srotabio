@@ -1,19 +1,21 @@
 # SrotaBio static landing page
 
 A dependency-free waitlist landing page designed for GitHub Pages and aligned
-to the approved SrotaBio identity package dated 2026-09-02. No build command is
-required.
+to the approved SrotaBio identity and its 2026-09-03 palette refinement. No
+build command is required.
 
 ## Brand authority
 
 - Use **SrotaBio** as one word.
-- Cream `#FAF6EC`, Iron `#36384E`, Blue `#7482A8`, Lime `#C4D275` and Slate
-  `#8FA0CC` are the active palette.
+- Cream `#FAF6EC`, Iron `#61648A`, Blue `#8793B3`, Lime `#97AF0E` and Slate
+  `#98A6C7` are the active palette.
+- The light-on-Cream wordmark is an approved identity exception: Cornflower
+  `#7482A8` for the initial **S**, Ink `#36384E` for **rotaBio**, and the current
+  deeper Lime `#97AF0E` for the single lowercase-**i** dot.
 - Manrope is the active wordmark, UI and body family.
 - The supplied rounded-square icon is used for the favicon and app touch icon.
-- The light and dark website wordmarks are exact crops of the approved
-  presentation assets. The supplied OG banner is inactive because it contains
-  rejected copy.
+- The light and dark website wordmarks are exact canonical exports. The
+  supplied OG banner is inactive because it contains rejected copy.
 - The canonical rules live in `../srota_os/brand_system.md` and
   `../brand/current/README.md`.
 
@@ -37,9 +39,10 @@ email address and a non-sensitive source label.
 
 ### 2. Maintain the identity
 
-The active 2026-09-02 identity overrides are in `brand-refresh.css`. The
-approved Manrope font and current logo exports live under `assets/`. Preserve
-the canonical wordmark construction and compact-icon use when making changes.
+The active identity, component styles and responsive rules are consolidated in
+`styles.css`. The approved Manrope font and current logo exports live under
+`assets/`. Preserve the canonical wordmark construction and compact-icon use
+when making changes.
 
 ## Preview locally
 
@@ -66,8 +69,7 @@ GitHub will provide the public URL after the first deployment completes.
 
 - `index.html` — page structure and copy
 - `theme.css` — historical identity tokens retained as an unreferenced record
-- `styles.css` — responsive layout and components
-- `brand-refresh.css` — active approved brand tokens and component overrides
+- `styles.css` — active brand tokens, responsive layout and components
 - `site-config.js` — waitlist service configuration
 - `script.js` — form validation and submission
 - `assets/identity/` — active wordmarks, icons and favicon plus historical assets
