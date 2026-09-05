@@ -1,64 +1,60 @@
-const form = document.querySelector("#waitlist-form");
-const emailInput = document.querySelector("#email");
-const statusMessage = document.querySelector("#form-status");
-const submitButton = form?.querySelector('button[type="submit"]');
-const endpoint = window.SROTA_SITE_CONFIG?.waitlistEndpoint?.trim() ?? "";
-const themeColor = getComputedStyle(document.documentElement)
-  .getPropertyValue("--color-brand-primary")
-  .trim();
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-document.querySelector('meta[name="theme-color"]').content = themeColor;
-
-function setStatus(message, state = "") {
-  statusMessage.textContent = message;
-
-  if (state) {
-    statusMessage.dataset.state = state;
-  } else {
-    delete statusMessage.dataset.state;
+const config = window.SROTA_SITE_CONFIG ?? {};
+const form = document.querySelector('#waitlist-form');
+const email = document.querySelector('#email');
+const status = document.querySelector('#form-status');
+const menu = document.querySelector('.menu-toggle');
+const nav = document.querySelector('#navigation');
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
+menu?.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+  menu.setAttribute('aria-expanded', String(open));
+  nav.classList.toggle('is-open', open);
+  menu.querySelector('span').textContent = open ? '−' : '+';
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') {
+    menu.click();
+    menu.focus();
   }
+});
+function showStatus(message, state) {
+  status.textContent = message;
+  status.dataset.state = state;
 }
-
-form?.addEventListener("submit", async (event) => {
+form?.addEventListener('submit', async event => {
   event.preventDefault();
-  setStatus("");
-
-  if (!emailInput.validity.valid) {
-    setStatus("Please enter a valid email address.", "error");
-    emailInput.focus();
+  email.value = email.value.trim();
+  if (!email.validity.valid) {
+    email.setAttribute('aria-invalid', 'true');
+    showStatus('Please enter a valid email address.', 'error');
+    email.focus();
     return;
   }
-
-  if (!endpoint) {
-    setStatus("Waitlist sign-ups are opening shortly. Please check back soon.", "error");
-    console.warn("Add the waitlist endpoint in site-config.js before publishing.");
-    return;
-  }
-
-  submitButton.disabled = true;
-  submitButton.textContent = "Joining…";
-
-  try {
-    const response = await fetch(endpoint, {
-      method: "POST",
-      body: new FormData(form),
-      headers: {
-        Accept: "application/json",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Waitlist request failed with status ${response.status}`);
-    }
-
+  email.removeAttribute('aria-invalid');
+  if (config.previewMode !== false || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || location.protocol === 'file:') {
     form.reset();
-    setStatus("You’re on the list. We’ll be in touch as SrotaBio develops.", "success");
-  } catch (error) {
-    console.error(error);
-    setStatus("We couldn’t add you right now. Please try again in a moment.", "error");
+    showStatus('Preview complete. Your email has not been saved or submitted.', 'success');
+    return;
+  }
+  const endpoint = config.waitlistEndpoint?.trim();
+  if (!endpoint) {
+    showStatus('Signups are not open yet. Please contact us at contact@srotabio.com.', 'error');
+    return;
+  }
+  const button = form.querySelector('button[type=submit]');
+  const original = button.innerHTML;
+  button.disabled = true;
+  button.textContent = 'Submitting…';
+  try {
+    const response = await fetch(endpoint, {method:'POST', body:new FormData(form), headers:{Accept:'application/json'}});
+    if (!response.ok) throw new Error('Signup unavailable');
+    form.reset();
+    showStatus('Thank you. Your interest has been received.', 'success');
+  } catch {
+    showStatus('We couldn’t save your interest. Please try again or email contact@srotabio.com.', 'error');
   } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = "Join the list";
+    button.disabled = false;
+    button.innerHTML = original;
   }
 });
