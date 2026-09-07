@@ -1143,3 +1143,27 @@ dd span {
 .event-registration p { font-size:.75rem; margin:.65rem 0 0; }
 .button:disabled { cursor:not-allowed; opacity:1; box-shadow:none; transform:none; }
 @media(min-width:1051px) { .approved-panel .portrait { height:210px; } }
+
+/* Conversations: series introduction and featured event invitation. */
+.conversations-intro { padding-block:3rem 2.5rem; }
+.conversations-intro h1 { font-size:clamp(2rem,4vw,3.2rem); margin-bottom:.8rem; }
+.conversation-invitation { display:grid; grid-template-columns:1.25fr 1fr; gap:3rem; padding:clamp(1.5rem,4vw,3.5rem); border:3px solid var(--lime); border-radius:6px; align-items:center; }
+.conversation-number { font-size:1.1rem; font-weight:700; margin-bottom:1.5rem; }
+.conversation-copy h2 { font-size:clamp(2.7rem,5.5vw,4.8rem); line-height:1.05; margin-bottom:1.5rem; }
+.conversation-subtitle { font-size:1.2rem; font-weight:650; margin-bottom:.5rem; }
+.conversation-logistics { margin:2rem 0; display:grid; gap:1rem; }
+.conversation-logistics>div { display:grid; grid-template-columns:4rem 1fr; align-items:baseline; gap:1rem; }
+.conversation-logistics dt { font-size:1rem; }
+.conversation-logistics dd { font-size:clamp(1.05rem,1.6vw,1.3rem); }
+.conversation-speaker { margin:0; background:var(--iron); color:var(--cream); border-radius:4px; overflow:hidden; }
+.conversation-speaker img { width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center 25%; display:block; }
+.conversation-speaker figcaption { padding:1.5rem; }
+.conversation-speaker h3 { font-size:1.4rem; margin-bottom:.7rem; }
+.conversation-speaker p { font-size:.9rem; line-height:1.7; margin:0; }
+@media(max-width:760px) {
+ .conversation-invitation { grid-template-columns:1fr; gap:2rem; }
+ .conversation-copy h2 { font-size:clamp(2.5rem,10vw,3.6rem); }
+ .conversation-logistics>div { grid-template-columns:1fr; gap:.2rem; }
+ .conversation-copy .button { width:100%; }
+ .conversation-speaker img { max-height:350px; }
+}
