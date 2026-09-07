@@ -383,7 +383,7 @@ a:hover {
   border-radius:6px;
   overflow:hidden;
 }
-.scientist {
+.scientist,.founder {
   display:grid;
   grid-template-columns:160px 1fr;
   max-width:760px;
@@ -413,8 +413,42 @@ a:hover {
 }
 .founder {
   background:var(--soft);
+}
+.portrait-placeholder {
+  min-height:230px;
+  display:grid;
+  place-items:center;
+  background:var(--blue);
+  color:var(--cream);
+  font-size:clamp(2.4rem,5vw,4.25rem);
+  font-weight:800;
+  letter-spacing:-.06em;
+}
+.social-links {
   display:flex;
-  align-items:center;
+  gap:.65rem;
+  margin-top:1.25rem;
+}
+.social-link {
+  width:2.5rem;
+  height:2.5rem;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+  border-radius:50%;
+  color:var(--iron);
+  text-decoration:none;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease;
+}
+.social-link svg {
+  width:1rem;
+  height:1rem;
+  fill:currentColor;
+}
+.social-link:hover {
+  background:var(--iron);
+  border-color:var(--iron);
+  color:var(--cream);
 }
 .writing-section {
   display:grid;
@@ -739,17 +773,12 @@ dd span {
   max-width:550px;
 }
 .story-body {
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:4rem;
   padding-block:3rem;
   border-top:1px solid var(--line);
 }
-.story-label p:not(.eyebrow) {
-  font-size:.9rem;
-}
 .prose {
   max-width:720px;
+  margin-left:auto;
 }
 .prose>p {
   color:var(--muted);
@@ -865,10 +894,10 @@ dd span {
   .people-grid {
     grid-template-columns:1fr 1fr;
   }
-  .scientist {
+  .scientist,.founder {
     grid-template-columns:1fr;
   }
-  .scientist .portrait {
+  .scientist .portrait,.founder .portrait {
     height:260px;
     object-position:50% 23%;
   }
@@ -977,7 +1006,7 @@ dd span {
   .feature-person strong {
     font-size:1.1rem;
   }
-  .split,.writing-section,.faq,.signup,.event-detail,.story-body,.featured-writing,.contact-options {
+  .split,.writing-section,.faq,.signup,.event-detail,.featured-writing,.contact-options {
     grid-template-columns:1fr;
     gap:1.5rem;
   }
@@ -1002,10 +1031,10 @@ dd span {
     grid-template-columns:1fr;
     gap:1rem;
   }
-  .scientist {
+  .scientist,.founder {
     grid-template-columns:110px 1fr;
   }
-  .scientist .portrait {
+  .scientist .portrait,.founder .portrait {
     height:100%;
     object-position:50% 30%;
   }
@@ -1096,12 +1125,6 @@ dd span {
   }
   .story-body {
     padding-top:2rem;
-    gap:1rem;
-  }
-  .story-label {
-    display:flex;
-    justify-content:space-between;
-    gap:1rem;
   }
   .story-body .prose h2 {
     font-size:2rem;
