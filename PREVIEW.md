@@ -28,3 +28,7 @@ No repository push or deployment is part of this work.
 ## Verification
 
 All seven pages reviewed in the same local preview tab at 1280 px desktop and 390 px mobile widths. Internal links, anchors, image alternatives, unique IDs and page headings checked. Mobile navigation and Escape behavior, invalid email feedback, and valid preview signup tested. Browser reported no warnings or errors. Approved Iron/Cream text contrast is 5.26:1.
+
+## Revision — 7 September 2026
+
+Restored the approved homepage copy from 15470aa, preserved the user-commented eyebrow, and removed the added homepage story, clinician hero button, invitation band, writing teaser and FAQ to simplify the page. Updated event date and venue to 19 September 2026, CIE @ IIIT-Hyderabad. Added Lime outline and disabled Register buttons pending the Luma URL. Project and repository AGENTS.md now require explicit authorization before changing existing website material. Desktop/mobile preview inspected after restoration.

@@ -235,6 +235,7 @@ a:hover {
   color:var(--muted);
 }
 .event-feature {
+  border:3px solid var(--lime);
   background:var(--iron);
   color:var(--cream);
   padding:1.8rem 2rem 0;
@@ -1116,3 +1117,11 @@ dd span {
     animation:none!important;
   }
 }
+
+/* September 7: approved-copy restoration and event registration. */
+.approved-panel { margin-inline:auto; align-items:center; }
+.event-registration { padding:0 0 1.5rem; }
+.event-registration .button { width:100%; }
+.event-registration p { font-size:.75rem; margin:.65rem 0 0; }
+.button:disabled { cursor:not-allowed; opacity:1; box-shadow:none; transform:none; }
+@media(min-width:1051px) { .approved-panel .portrait { height:210px; } }
