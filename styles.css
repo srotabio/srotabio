@@ -78,16 +78,6 @@ a:hover {
   width:min(100% - 6rem,1200px);
   margin-inline:auto;
 }
-.preview-note {
-  padding:6px 1rem;
-  text-align:center;
-  background:var(--soft);
-  font-size:.75rem;
-  color:var(--muted);
-}
-.preview-note span {
-  margin:0 .4rem;
-}
 .site-header {
   display:flex;
   align-items:center;
@@ -152,6 +142,9 @@ a:hover {
   height:7px;
   background:var(--lime);
   margin:0 7px 2px 0;
+}
+.text-lime {
+  color:var(--lime);
 }
 .lead {
   font-size:clamp(1.05rem,1.6vw,1.25rem);
@@ -899,9 +892,6 @@ dd span {
 @media(max-width:760px) {
   .wrap {
     width:calc(100% - 2.5rem);
-  }
-  .preview-note {
-    font-size:.75rem;
   }
   .site-header {
     position:relative;
