@@ -11,7 +11,7 @@
   --blue:#8793b3;
   --lime:#97af0e;
   --slate:#98a6c7;
-  --muted:#5c5e70;
+  --muted:var(--iron);
   --line:rgba(97,100,138,.24);
   --soft:rgba(135,147,179,.10);
   --font:'Manrope',sans-serif;
@@ -128,9 +128,6 @@ a:hover {
   text-decoration-color:var(--lime);
   text-decoration-thickness:3px;
   text-underline-offset:9px;
-}
-.nav-contact {
-  margin-left:.7rem;
 }
 .menu-toggle {
   display:none;
@@ -443,6 +440,9 @@ a:hover {
   font-size:.875rem;
   color:var(--muted);
 }
+.about-page .person-copy p:not(.eyebrow) {
+  font-weight:550;
+}
 .person-copy .text-link {
   font-size:.8rem;
 }
@@ -669,6 +669,13 @@ input::placeholder {
   margin-bottom:1.5rem;
   max-width:950px;
 }
+.page-intro h1 .text-lime {
+  color:inherit;
+  text-decoration:underline;
+  text-decoration-color:var(--lime);
+  text-decoration-thickness:.08em;
+  text-underline-offset:.12em;
+}
 .page-intro .lead {
   max-width:690px;
 }
@@ -819,6 +826,9 @@ dd span {
 .prose>p {
   color:var(--muted);
 }
+.about-page .story-body .prose>p {
+  font-weight:550;
+}
 .prose h2 {
   margin-top:2rem;
 }
@@ -908,9 +918,6 @@ dd span {
   }
   .brand img {
     width:145px;
-  }
-  .nav-contact {
-    margin-left:0;
   }
   .home-hero {
     gap:2.5rem;
