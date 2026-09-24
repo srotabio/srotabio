@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="SrotaBio">
 <link rel="icon" href="../assets/identity/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/identity/apple-touch-icon.png">
-<link rel="stylesheet" href="../styles.css?v=20260924-7">
+<link rel="stylesheet" href="../styles.css?v=20260924-8">
 <script defer src="../site-config.js"></script>
 <script defer src="../script.js"></script>
 </head>
@@ -56,11 +56,24 @@
 <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe08N3aMQZOdD7LamKWXKJlw87jJ7c4XXuMWXBG9Pf6vuU-vQ/viewform?usp=sharing&amp;ouid=112866878997080646625" target="_blank" rel="noopener">Answer the survey <span aria-hidden="true">↗</span></a>
 </section>
 </main>
+<aside class="survey-sticky-prompt" id="survey-sticky-prompt" aria-label="Survey invitation">
+<strong>Share your perspective.</strong>
+<a class="button button-light" href="https://docs.google.com/forms/d/e/1FAIpQLSe08N3aMQZOdD7LamKWXKJlw87jJ7c4XXuMWXBG9Pf6vuU-vQ/viewform?usp=sharing&amp;ouid=112866878997080646625" target="_blank" rel="noopener">Answer the survey <span aria-hidden="true">↗</span></a>
+</aside>
 <footer class="site-footer">
 <div class="wrap">
 <div class="footer-top"><a class="brand" href="../index.html"><img src="../assets/identity/srotabio-wordmark-dark.png" width="1041" height="271" alt="SrotaBio"></a><p>Female health is connected.<br>Care should be too.</p></div>
 <div class="footer-bottom"><span>© <span id="year">2026</span> SrotaBio</span><div><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a><a href="https://www.linkedin.com/company/srotabio/">LinkedIn ↗</a></div></div>
 </div>
 </footer>
+<script>
+const surveyPrompt = document.getElementById('survey-sticky-prompt');
+const surveySection = document.querySelector('.survey-callout');
+if (surveyPrompt && surveySection && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => {
+    surveyPrompt.hidden = entry.isIntersecting;
+  }, { threshold: 0.2 }).observe(surveySection);
+}
+</script>
 </body>
 </html>

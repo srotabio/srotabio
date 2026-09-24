@@ -1320,6 +1320,37 @@ dd span {
 .community-register-page .survey-callout p {
   font-weight:650;
 }
+
+/* Exploratory registration-page survey prompt. */
+.survey-sticky-prompt {
+  position:fixed;
+  right:clamp(1rem,3vw,2.5rem);
+  bottom:clamp(1rem,3vw,2rem);
+  z-index:20;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  max-width:calc(100vw - 2rem);
+  padding:.85rem .9rem .85rem 1.1rem;
+  background:var(--iron);
+  color:var(--cream);
+  border:1px solid rgba(250,246,236,.28);
+  border-top:4px solid var(--lime);
+  border-radius:7px;
+  box-shadow:0 16px 40px rgba(54,56,78,.28);
+}
+.survey-sticky-prompt[hidden] { display:none; }
+.survey-sticky-prompt strong {
+  max-width:12rem;
+  font-size:1rem;
+  font-weight:800;
+  line-height:1.25;
+}
+.survey-sticky-prompt .button {
+  flex:0 0 auto;
+  padding:.8rem 1rem;
+  white-space:nowrap;
+}
 @media(max-width:1050px) {
   .conversation-invitation { grid-template-columns:1fr; gap:1.5rem; }
   .conversation-speaker { max-width:480px; }
@@ -1330,6 +1361,13 @@ dd span {
   .conversation-speaker img { width:80px; height:104px; }
   .conversation-speaker h3 { font-size:1.1rem; }
   .conversation-speaker p { font-size:.8rem; }
+  .survey-sticky-prompt {
+    right:.75rem;
+    bottom:calc(.75rem + env(safe-area-inset-bottom));
+    left:.75rem;
+    justify-content:space-between;
+  }
+  .survey-sticky-prompt strong { max-width:8rem; }
 }
 @media(max-width:380px) {
   .conversation-speaker { grid-template-columns:64px minmax(0,1fr); gap:.75rem; padding:.75rem; }
