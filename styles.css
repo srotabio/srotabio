@@ -162,6 +162,13 @@ a:hover {
 .text-lime {
   color:var(--lime);
 }
+.title-accent {
+  color:inherit;
+  text-decoration:underline;
+  text-decoration-color:var(--lime);
+  text-decoration-thickness:.08em;
+  text-underline-offset:.12em;
+}
 .lead {
   font-size:clamp(1.05rem,1.6vw,1.25rem);
   line-height:1.7;
@@ -669,15 +676,11 @@ input::placeholder {
   margin-bottom:1.5rem;
   max-width:950px;
 }
-.page-intro h1 .text-lime {
-  color:inherit;
-  text-decoration:underline;
-  text-decoration-color:var(--lime);
-  text-decoration-thickness:.08em;
-  text-underline-offset:.12em;
-}
 .page-intro .lead {
   max-width:690px;
+}
+.page-intro>.button {
+  margin-top:.5rem;
 }
 .event-detail {
   display:grid;
@@ -814,6 +817,28 @@ dd span {
 }
 .contact-panel>p {
   max-width:550px;
+}
+.survey-callout {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:3rem;
+  padding-block:3rem;
+  border-block:1px solid var(--line);
+  margin-bottom:var(--gap);
+}
+.survey-callout>div {
+  max-width:680px;
+}
+.survey-callout h2 {
+  font-size:2.1rem;
+}
+.survey-callout p {
+  color:var(--muted);
+  margin-bottom:0;
+}
+.survey-callout .button {
+  flex:0 0 auto;
 }
 .story-body {
   padding-block:3rem;
@@ -1070,6 +1095,11 @@ dd span {
     grid-template-columns:1fr;
     gap:1.5rem;
   }
+  .survey-callout {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:1.5rem;
+  }
   .story-section {
     padding-top:2.5rem;
   }
@@ -1240,7 +1270,7 @@ dd span {
   align-items:start;
 }
 .conversation-copy h2 { margin-bottom:1.25rem; }
-.conversation-copy h2 span { white-space:nowrap; color:inherit; text-decoration:underline; text-decoration-color:var(--lime); text-decoration-thickness:3px; text-underline-offset:.15em; }
+.conversation-copy h2 .title-accent { white-space:nowrap; text-underline-offset:.15em; }
 .conversation-copy>p:not(.conversation-subtitle) { color:inherit; }
 .conversation-subtitle { font-size:1rem; font-weight:650; margin-bottom:.5rem; }
 .conversation-logistics { margin:1.5rem 0; display:grid; gap:.75rem; }
@@ -1266,6 +1296,30 @@ dd span {
 .conversation-speaker figcaption { min-width:0; }
 .conversation-speaker h3 { font-size:1.25rem; line-height:1.3; margin-bottom:.7rem; }
 .conversation-speaker p { color:inherit; font-size:.875rem; line-height:1.7; margin:0; }
+
+/* Shared Community card typography and surface treatment. */
+.community-card {
+  background:var(--iron);
+  color:var(--cream);
+  border:1px solid var(--iron);
+  border-top:4px solid var(--lime);
+  border-radius:7px;
+}
+.community-card h2 {
+  font-size:clamp(2rem,3.35vw,3.25rem);
+}
+.community-card p.community-card__lead {
+  max-width:440px;
+  color:inherit;
+  font-size:1rem;
+  font-weight:650;
+  line-height:1.7;
+}
+.community-register-page .signup label,
+.community-register-page .signup .form-note,
+.community-register-page .survey-callout p {
+  font-weight:650;
+}
 @media(max-width:1050px) {
   .conversation-invitation { grid-template-columns:1fr; gap:1.5rem; }
   .conversation-speaker { max-width:480px; }

@@ -37,6 +37,10 @@ workspace includes a self-hosted Flask and PostgreSQL receiver in the sibling
 Do not add health information to this form. It is intentionally limited to an
 email address and a non-sensitive source label.
 
+The Community registration page at `community/register.html` uses the same
+endpoint and sends `srotabio-community-register-page` as its source label so
+new signups from that route can be distinguished in the database.
+
 ### 2. Maintain the identity
 
 The active identity, component styles and responsive rules are consolidated in
@@ -68,6 +72,7 @@ GitHub will provide the public URL after the first deployment completes.
 ## Files
 
 - `index.html` — page structure and copy
+- `community/register.html` — Community interest-registration and survey page
 - `theme.css` — historical identity tokens retained as an unreferenced record
 - `styles.css` — active brand tokens, responsive layout and components
 - `site-config.js` — waitlist service configuration
