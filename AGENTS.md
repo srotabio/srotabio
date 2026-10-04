@@ -1,21 +1,34 @@
 # Website change rules
 
-Preserve existing website copy, design, layout, and behavior by default. A request to add sections or pages does not authorize changing existing material. Obtain explicit permission before modifying existing material unless the user has already specifically instructed that change. Compare against the approved baseline, preserve user edits and commented-out content, and keep proposed replacements separate until approved.
+## Scope and confidentiality
 
-Follow the parent workspace AGENTS.md and srota_os/brand_system.md. Keep changes local until explicit production approval.
+This repository is public. Keep tracked files and repository metadata limited
+to website code, required assets, licenses and public technical documentation.
 
-## Website presentation preferences — 2026-09-07
+Do not copy internal brand guidelines, agent memory, personal preferences,
+conversation history, review logs, confidential operating context, private
+document or repository locators, or local workspace paths into this repository.
+Obtain internal guidance separately through an authorized private workspace;
+do not link or reproduce it here. Review the full diff, filenames, comments,
+commit messages and PR text for disclosure before pushing.
 
-- Do not add banners announcing that the website is a local preview.
-- Do not add tiny page-top eyebrow or kicker headings such as “About SrotaBio”.
-- Preserve Abhirath’s manual removals of these elements. Reintroduce them only if explicitly requested.
+## Change authority
 
-## Marketing copy approval — 2026-09-07
+Preserve existing website copy, design, layout, behavior, manual edits and
+commented-out material unless the task explicitly authorizes changes.
+A request to add a page or section does not authorize unrelated changes.
 
-All copy for future marketing material, including websites and posters, must receive Abhirath’s explicit approval before creating a production asset. Present proposed copy separately for review first; approval to explore a design does not approve new copy.
+New marketing copy requires the designated company approver's explicit
+approval before production asset creation. Public publication and deployment
+require the responsible owner's explicit authorization.
 
-## Judgment and verification — 2026-09-08
+## Verification
 
-Read `../srota_os/judgment.md` and the parent instructions even when this nested Git repository is opened directly. Use the existing site as the scale and alignment reference for new pages. Before changing CSS to fix a perceived mismatch, verify the available preview's URL, file/branch, zoom, viewport, loaded stylesheet, and cache state. Inspect the final page beside the relevant existing pages in the same permitted browser context. Use Codex's browser or generated renders; never inspect or control Brave.
+Use the existing site as the scale and alignment reference for changes.
+Verify the preview URL, source branch, viewport and loaded stylesheets before
+diagnosing a visual mismatch. Inspect the exact final page at desktop and
+mobile widths and verify the requested before/after difference.
 
-Match the requested change precisely. For a palette experiment, preserve content and geometry and account for every visible color role. For a decorative change, resolve the actual shape or glyph construction and verify there is no duplicate or unintended remnant in the rendered result. A useful primitive with accurate geometry is sufficient; additional illustrations, motion, cards, labels, or layout changes need a purpose in this brief.
+Run checks appropriate to the change. For documentation-only cleanup, verify
+the resulting repository content and confirm website source and assets are
+unchanged.
