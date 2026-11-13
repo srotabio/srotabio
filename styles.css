@@ -1499,3 +1499,10 @@ dd span {
   .conversation-speaker img { width:64px; height:84px; }
   .conversation-speaker h3 { font-size:1rem; }
 }
+
+.company-details { margin-top: 3rem; padding-bottom: 2.5rem; text-align: left; }
+.company-details hr { margin: 0 0 1.5rem; border: 0; border-top: 1px solid var(--line); }
+.company-details__copy { max-width: 46rem; font-size: .875rem; line-height: 1.65; }
+.company-details h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+.company-details p { margin: 0 0 .75rem; }
+.company-details p:last-child { margin-bottom: 0; }
