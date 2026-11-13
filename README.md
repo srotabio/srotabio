@@ -27,9 +27,8 @@ Open <http://127.0.0.1:8000>.
 ## Signup configuration
 
 GitHub Pages cannot store form submissions. Set `waitlistEndpoint` in
-`site-config.js` to an authorized HTTPS receiver. Review `previewMode` and
-test form behavior before enabling submissions. Preview behavior is defined
-in the website scripts.
+`site-config.js` to an authorized HTTPS receiver. Local and production forms submit to their configured receivers. The Contact
+form uses the Google Forms action and field IDs in `site-config.js`.
 
 ## Deployment
 

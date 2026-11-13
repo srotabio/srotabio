@@ -7,22 +7,23 @@
       name="description"
       content="SrotaBio is a clinician-led online care that connects medical guidance, practical lifestyle support and follow-through for women with PMOS."
     />
-    <meta name="theme-color" content="#FAF6EC" />
+    <meta name="theme-color" content="#EDE9D0" />
     <meta property="og:title" content="SrotaBio" />
     <meta
       property="og:description"
-      content="Women’s health is connected. Care should be too. Join the SrotaBio early-access list."
+      content="We meet you where you are. We’re building the PMOS care we wish existed."
     />
     <meta property="og:type" content="website" />
     <title>SrotaBio</title>
 
     <meta property="og:site_name" content="SrotaBio" />
-    <link rel="icon" href="./assets/identity/favicon.png" type="image/png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="./assets/identity/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./home.css?v=20260924-2" />
-    <script defer src="./site-config.js"></script>
-    <script defer src="./script.js"></script>
-  </head>
+    <link rel="icon" href="./assets/identity/favicon.png?v=20261113-2" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/identity/apple-touch-icon.png?v=20261113-2" />
+    <link rel="stylesheet" href="./home.css?v=20261113-3" />
+    <script defer src="./site-config.js?v=20261113-4"></script>
+    <script defer src="./script.js?v=20261113-4"></script>
+  <link rel="stylesheet" href="footer.css?v=20261113-6">
+</head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -30,17 +31,17 @@
       <a class="brand" href="./index.html" aria-label="SrotaBio home" aria-current="page">
         <img
           class="brand__wordmark"
-          src="./assets/identity/srotabio-wordmark-light.png"
+          src="./assets/identity/srotabio-wordmark-light.png?v=20261113-2"
           alt="SrotaBio"
-          width="1041"
-          height="271"
+          width="728"
+          height="146"
         />
       </a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">+</span></button>
       <nav class="site-nav" id="navigation" aria-label="Page navigation">
         <a class="site-nav__link" href="./index.html" aria-current="page">Home</a>
-        <a class="site-nav__link" href="./about.html">About</a>
-        <a class="site-nav__link" href="./community.html">Community</a>
+        <a class="site-nav__link" href="./experts.html">Experts</a>
+        <a class="site-nav__link" href="./contact.html">Contact</a>
       </nav>
     </header>
 
@@ -48,100 +49,128 @@
       <section class="hero" id="top">
         <div class="hero__copy">
           <!--<p class="eyebrow">Clinician-led care.</p>-->
-          <h1>Female health is connected. Care should be too.</h1>
+          <h1>PMOS Care that meets you where you are</h1>
           <p class="hero__summary">
-            We are a building clinician-led online care for women with
-            <b>Polyendocrine Metabolic Ovarian Syndrome (PMOS)</b>, formerly PCOS—bringing
-            medical care, lifestyle support and follow-through into
+            A <b>doctor-led</b> online program to help you manage your
+            <b>Polyendocrine Metabolic Ovarian Syndrome (PMOS)</b>, formerly PCOS— with medical 
+             care, exercise and nutrition coaching and lifestyle support, all in
             one connected experience.
           </p>
           <div class="hero__actions">
-            <a class="button" href="#waitlist">Join the early-access list</a>
+            <a class="button" href="#how-we-deliver-care">How we deliver care</a>
           </div>
         </div>
       </section>
 
-      <section class="experts" id="experts" aria-labelledby="experts-title">
-        <div class="experts__heading">
-          <p class="eyebrow">Medical and Scientific leadership</p>
-          <h2 id="experts-title">On Our Panel</h2>
-        </div>
-        <div class="experts__carousel" role="region" aria-label="SrotaBio experts" tabindex="0">
-          <div class="experts__grid">
-            <!-- Duplicate this article to add another expert to the horizontal carousel. -->
-            <article class="expert-card">
-              <div class="expert-card__portrait">
-                <img
-                  class="expert-card__photo"
-                  src="./assets/pfps/shilpapfp.jpeg"
-                  alt="Dr. Shilpa Pothapragada"
-                  width="800"
-                  height="800"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="expert-card__photo-placeholder" aria-hidden="true">SP</span>
-              </div>
-              <div class="expert-card__identity">
-                <h3>Dr. Shilpa Pothapragada</h3>
-                <p>Principal Scientific Advisor</p>
-              </div>
-            </article>
-          </div>
-        </div>
+      <section class="voices" aria-labelledby="voices-title">
+        <p class="eyebrow">Does this sound like you?</p>
+        <h2 class="sr-only" id="voices-title">What women with PMOS tell us</h2>
+        <ul class="voices__list">
+          <li class="voice">I went to 6 doctors and got 6 different answers.</li>
+          <li class="voice">“Just lose weight.” That’s the whole plan?</li>
+          <li class="voice">Diagnosed with PMOS at 19. Still figuring it out at 32.</li>
+          <li class="voice">Keto? Low-carb? Fasting? What’s right for my insulin resistance?</li>
+        </ul>
       </section>
 
-      <section class="waitlist" id="waitlist" aria-labelledby="waitlist-title">
-        <div class="waitlist__copy">
-          <p class="eyebrow">Follow the work</p>
-          <h2 id="waitlist-title">Join the SrotaBio early-access list.</h2>
-          <p>
-            Be the first to hear when we launch...
-          </p>
+      <section class="approach" aria-labelledby="approach-title">
+       <!-- <p class="approach__question">So, what are we going to do about it?</p>-->
+        <h2 id="approach-title">We have built the PMOS care <span>we wish existed.</span></h2>
+        <ol class="approach__list">
+          <li>
+            <strong>Bringing all aspects of PMOS care under one roof</strong>
+            medical, nutrition and exercise.
+          </li>
+          <li>
+            <strong>You have your own care manager</strong>
+            who makes sure continuity in your care.
+          </li>
+          <li>
+            <strong>Help you build long-term accountability</strong>
+            with regular check-ins to build sustainable change. No quick fixes.
+          </li>
+        </ol>
+      </section>
+
+      <section class="audience" aria-labelledby="audience-title">
+        <h2 id="audience-title">Who we are for</h2>
+        <ul class="card-grid card-grid--three">
+          <li class="info-card">
+            <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></svg>
+            <p>You’ve been diagnosed with PMOS</p>
+          </li>
+          <li class="info-card">
+            <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/><path d="M10 8.5a2 2 0 1 1 2.5 1.9c-.4.2-.5.5-.5.9v.4M12 13.5h.01"/></svg>
+            <p>You’ve felt rushed or unheard at appointments, with one-size-fits-all advice</p>
+          </li>
+          <li class="info-card">
+            <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v5h-5"/></svg>
+            <p>You’ve tried many different treatments, but nothing has lasted</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="care-team" aria-labelledby="care-team-title">
+        <h2 id="care-team-title">Your care team will consist of</h2>
+        <ul class="card-grid card-grid--four">
+          <li class="team-card">
+            <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></svg>
+            <h3>Gynaecologist</h3>
+            <p>Your PMOS doctor</p>
+          </li>
+          <li class="team-card">
+            <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19l7-7"/></svg>
+            <h3>Health coach</h3>
+            <p>Nutrition and exercise</p>
+          </li>
+          <li class="team-card">
+            <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <h3>Care manager</h3>
+            <p>With you throughout</p>
+          </li>
+          <li class="team-card">
+            <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>
+            <h3>Any other expert</h3>
+            <p>that you might need</p>
+          </li>
+        </ul>
+        <br>
+        <div class="hero__actions">
+            <a class="button" href="./experts.html#expert-panel">Meet our Expert Panel</a>
+          </div>
+      </section>
+
+      <section class="delivery" id="how-we-deliver-care" aria-labelledby="delivery-title">
+        <h2 id="delivery-title">How we deliver care</h2>
+        <ol class="timeline">
+          <li>Your Doctor Consultaiton</li>
+          <li>Our partner lab collects samples at your home</li>
+          <li>Your doctor and health coach create your care plan</li>
+          <li>If you need medicines, we home deliver them to you</li>
+          <li>We help you build the habits and track your progress</li>
+        </ol>
+        <p class="delivery__note">
+          <strong>Want to know if we can help?</strong>
+        </p>
+        <div class="delivery__actions">
+          <a class="button" href="mailto:contact@srotabio.com">Get in touch</a>
+          <span data-book-call hidden>
+          <a class="button" href="#" target="_blank" rel="noopener">Book a call now <span aria-hidden="true">↗</span></a>
+          </span>
         </div>
-
-        <form class="waitlist-form" id="waitlist-form" novalidate>
-          <label for="email">Email address</label>
-          <div class="waitlist-form__controls">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              inputmode="email"
-              autocomplete="email"
-              placeholder="you@example.com"
-              required
-            />
-            <button class="button button--lime" type="submit">Join the list</button>
-          </div>
-
-          <div class="honeypot" aria-hidden="true">
-            <label for="company">Leave this field empty</label>
-            <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
-          </div>
-          <input name="source" type="hidden" value="srotabio-landing-page" />
-
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          <!--<p class="form-privacy">
-            We’ll only use your email for SrotaBio updates. You can unsubscribe
-            at any time.
-          </p>-->
-        </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <img
-        class="site-footer__wordmark"
-        src="./assets/identity/srotabio-wordmark-light.png"
-        alt="SrotaBio"
-        width="1041"
-        height="271"
-      />
-      <p>
-        
-      </p>
-      <p class="site-footer__copyright">© <span id="year"></span> SrotaBio</p>
-    </footer>
+<div class="wrap">
+<div class="footer-top"><a class="brand" href="index.html"><img src="assets/identity/srotabio-wordmark-dark.png?v=20261113-2" width="728" height="146" alt="SrotaBio"></a>
+<p>Care that meets you where you are.</p>
+</div>
+<div class="footer-bottom"><span>© <span id="year">2026</span> SrotaBio <span class="footer-legal">by SrotaFlow Bio Pvt Ltd.</span></span>
+<div><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="https://www.linkedin.com/company/srotabio/">LinkedIn ↗</a>
+</div>
+</div>
+</div>
+</footer>
   </body>
 </html>
