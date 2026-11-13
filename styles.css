@@ -1,20 +1,50 @@
 @font-face {
-  font-family:Manrope;
-  src:url('assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-family:"Comfortaa";
+  src:url('assets/fonts/Comfortaa-latin-wght.woff2') format('woff2');
   font-style:normal;
-  font-weight:300 800;
+  font-weight:300 700;
+  font-display:swap;
+}
+@font-face {
+  font-family:"Nunito Sans";
+  src:url('assets/fonts/NunitoSans-latin-wght.woff2') format('woff2');
+  font-style:normal;
+  font-weight:200 1000;
+  font-display:swap;
+}
+@font-face {
+  font-family:"Nunito Sans";
+  src:url('assets/fonts/NunitoSans-Italic-latin-wght.woff2') format('woff2');
+  font-style:italic;
+  font-weight:200 1000;
   font-display:swap;
 }
 :root {
-  --cream:#faf6ec;
-  --iron:#61648a;
-  --blue:#8793b3;
-  --lime:#97af0e;
-  --slate:#98a6c7;
+  /* Primary */
+  --color-primary:#AE340E;
+  --color-green:#0EAD83;
+  /* Secondary */
+  --color-teal:#0EA2AD;
+  --color-berry:#AD0E2E;
+  --color-forest:#25584B;
+  --color-yellow:#E3DD6F;
+  /* Accent and neutrals */
+  --color-accent:#EDE9D0;
+  --color-text:#332E2D;
+  --color-white:#FFFFFF;
+  /* Typography */
+  --font-heading:"Comfortaa",sans-serif;
+  --font-body:"Nunito Sans",sans-serif;
+  /* Site roles mapped onto the brand palette */
+  --cream:var(--color-accent);
+  --iron:var(--color-text);
+  --blue:var(--color-forest);
+  --lime:var(--color-primary);
+  --panel:var(--color-forest);
   --muted:var(--iron);
-  --line:rgba(97,100,138,.24);
-  --soft:rgba(135,147,179,.10);
-  --font:'Manrope',sans-serif;
+  --line:rgba(51,46,45,.18);
+  --soft:var(--color-white);
+  --font:var(--font-body);
   --gap:clamp(4rem,7vw,7rem);
 }
 * {
@@ -56,8 +86,9 @@ h1,h2,h3,p {
   margin:0 0 1.25rem;
 }
 h1,h2,h3 {
-  font-weight:800;
-  letter-spacing:-.05em;
+  font-family:var(--font-heading);
+  font-weight:700;
+  letter-spacing:-.02em;
   line-height:1.08;
   text-wrap:balance;
 }
@@ -69,7 +100,7 @@ h2 {
 }
 h3 {
   font-size:1.65rem;
-  letter-spacing:-.035em;
+  letter-spacing:-.015em;
 }
 a {
   color:inherit;
@@ -137,7 +168,7 @@ a:hover {
   z-index:20;
   top:-100px;
   left:1rem;
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
   padding:1rem;
 }
@@ -185,9 +216,9 @@ a:hover {
   align-items:center;
   justify-content:center;
   gap:1.5rem;
-  background:var(--iron);
-  color:var(--cream);
-  border:1px solid var(--iron);
+  background:var(--color-primary);
+  color:var(--color-white);
+  border:1px solid var(--color-primary);
   border-radius:5px;
   padding:.95rem 1.3rem;
   font-size:.875rem;
@@ -199,11 +230,11 @@ a:hover {
 }
 .button:hover {
   transform:translateY(-2px);
-  box-shadow:0 3px 0 var(--lime);
+  box-shadow:0 3px 0 var(--color-text);
 }
 .button-light {
   background:var(--cream);
-  color:var(--iron);
+  color:var(--color-text);
   border-color:var(--cream);
 }
 .button:disabled {
@@ -267,8 +298,8 @@ a:hover {
   color:var(--muted);
 }
 .event-feature {
-  border:3px solid var(--lime);
-  background:var(--iron);
+  border:3px solid var(--color-yellow);
+  background:var(--panel);
   color:var(--cream);
   padding:1.8rem 2rem 0;
   border-radius:6px;
@@ -276,7 +307,7 @@ a:hover {
   overflow:visible;
   transform:none;
   transform-origin:center;
-  box-shadow:0 3px 8px rgba(97,100,138,.10);
+  box-shadow:0 3px 8px rgba(51,46,45,.10);
   transition:transform 220ms ease, box-shadow 220ms ease;
 }
 .event-card-link { text-decoration:none; }
@@ -298,7 +329,7 @@ a:hover {
     -10px 10px 0 var(--lime),
     -11px 11px 0 var(--lime),
     -12px 12px 0 var(--lime),
-    -20px 25px 28px rgba(97,100,138,.23);
+    -20px 25px 28px rgba(51,46,45,.23);
   }
 }
 .event-top {
@@ -352,7 +383,7 @@ a:hover {
   align-items:center;
   justify-content:space-between;
   gap:1rem;
-  border-top:1px solid rgba(250,246,236,.25);
+  border-top:1px solid rgba(237,233,208,.25);
   margin-top:1.6rem;
   padding-block:1.2rem;
 }
@@ -385,12 +416,12 @@ a:hover {
   margin-bottom:2rem;
 }
 .invitation-band {
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
   padding-block:4.5rem;
 }
 .invitation-band .eyebrow {
-  border-left:3px solid var(--lime);
+  border-left:3px solid var(--color-yellow);
   padding-left:1rem;
 }
 .invitation-band .button {
@@ -488,9 +519,61 @@ a:hover {
   fill:currentColor;
 }
 .social-link:hover {
-  background:var(--iron);
-  border-color:var(--iron);
+  background:var(--color-primary);
+  border-color:var(--color-primary);
   color:var(--cream);
+}
+.team-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.5rem;
+}
+.member {
+  display:grid;
+  grid-template-columns:150px 1fr;
+  background:var(--color-white);
+}
+.member .portrait,.member .portrait-placeholder {
+  min-height:100%;
+}
+.member .portrait-placeholder {
+  font-size:2.6rem;
+}
+.portrait-icon svg {
+  width:2.5rem;
+  height:2.5rem;
+  fill:none;
+  stroke:var(--cream);
+  stroke-width:2;
+  stroke-linejoin:round;
+}
+.founder-note blockquote {
+  max-width:900px;
+  margin:0;
+  padding-left:clamp(1.25rem,3vw,2.5rem);
+  border-left:4px solid var(--lime);
+}
+.founder-note blockquote p {
+  font-size:clamp(1.25rem,2.2vw,1.75rem);
+  font-weight:650;
+  line-height:1.5;
+  letter-spacing:-.015em;
+}
+.founder-note blockquote footer {
+  font-size:.875rem;
+  font-weight:800;
+}
+@media(max-width:760px) {
+  .team-grid {
+    grid-template-columns:1fr;
+    gap:1rem;
+  }
+  .member {
+    grid-template-columns:110px 1fr;
+  }
+  .member .portrait-placeholder {
+    font-size:1.8rem;
+  }
 }
 .writing-section {
   display:grid;
@@ -555,10 +638,10 @@ details p {
   padding-right:2rem;
 }
 .signup {
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
   border-radius:7px;
-  border-top:4px solid var(--lime);
+  border-top:4px solid var(--color-yellow);
   padding:3rem;
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -625,6 +708,48 @@ input::placeholder {
   outline-offset:3px;
   border-color:var(--iron);
 }
+.contact-form-panel {
+  align-items:start;
+}
+.contact-form-panel:has(> [hidden]) {
+  grid-template-columns:minmax(0,34rem);
+}
+.contact-form-panel input[type=text],.contact-form-panel input[type=tel] {
+  min-width:0;
+  width:100%;
+  background:var(--cream);
+  color:var(--iron);
+  border:2px solid transparent;
+  padding:.9rem 1rem;
+  border-radius:5px;
+  font-size:1rem;
+}
+.contact-form-panel input:not([type=hidden])+label {
+  margin-top:1.1rem;
+}
+.contact-form-panel input[aria-invalid=true] {
+  border-color:var(--error,#ffb8ad);
+}
+.contact-form-panel .form-note {
+  margin-bottom:1.25rem;
+}
+.contact-form-panel form .button {
+  width:100%;
+}
+.contact-form-panel__call {
+  padding-left:3rem;
+  border-left:1px solid rgba(237,233,208,.25);
+}
+.contact-form-panel__call h2 {
+  margin-bottom:1.5rem;
+}
+@media(max-width:760px) {
+  .contact-form-panel__call {
+    padding:2rem 0 0;
+    border-left:0;
+    border-top:1px solid rgba(237,233,208,.25);
+  }
+}
 .honeypot {
   position:absolute;
   left:-10000px;
@@ -633,7 +758,7 @@ input::placeholder {
   overflow:hidden;
 }
 .site-footer {
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
   padding:3rem 0 1.5rem;
 }
@@ -653,7 +778,7 @@ input::placeholder {
   margin:0;
 }
 .footer-bottom {
-  border-top:1px solid rgba(250,246,236,.25);
+  border-top:1px solid rgba(237,233,208,.25);
   padding-top:1.5rem;
   display:flex;
   justify-content:space-between;
@@ -689,7 +814,7 @@ input::placeholder {
   align-items:start;
 }
 .event-poster {
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
   padding:2rem;
   border-radius:6px;
@@ -872,7 +997,7 @@ dd span {
   margin-bottom:var(--gap);
 }
 .writing-index {
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
   font-size:16rem;
   font-weight:800;
@@ -891,7 +1016,7 @@ dd span {
   text-transform:uppercase;
   letter-spacing:.15em;
   line-height:1.5;
-  border-left:4px solid var(--lime);
+  border-left:4px solid var(--color-yellow);
   padding-left:1rem;
 }
 .featured-writing h2 {
@@ -1075,7 +1200,7 @@ dd span {
     padding:1.5rem 1.5rem 0;
     max-width:none;
     transform:none;
-    box-shadow:0 3px 8px rgba(97,100,138,.10);
+    box-shadow:0 3px 8px rgba(51,46,45,.10);
   }
   .event-feature h2 {
     font-size:clamp(2rem, 9vw, 2.5rem);
@@ -1262,10 +1387,10 @@ dd span {
   grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
   gap:2.5rem;
   padding:2rem;
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
-  border:1px solid var(--iron);
-  border-top:3px solid var(--lime);
+  border:1px solid var(--panel);
+  border-top:3px solid var(--color-yellow);
   border-radius:6px;
   align-items:start;
 }
@@ -1282,7 +1407,7 @@ dd span {
   gap:1.25rem;
   padding:1.25rem;
   margin:0;
-  border:1px solid rgba(250,246,236,.3);
+  border:1px solid rgba(237,233,208,.3);
   border-radius:6px;
   overflow:hidden;
 }
@@ -1299,10 +1424,10 @@ dd span {
 
 /* Shared Community card typography and surface treatment. */
 .community-card {
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
-  border:1px solid var(--iron);
-  border-top:4px solid var(--lime);
+  border:1px solid var(--panel);
+  border-top:4px solid var(--color-yellow);
   border-radius:7px;
 }
 .community-card h2 {
@@ -1332,12 +1457,12 @@ dd span {
   gap:1rem;
   max-width:calc(100vw - 2rem);
   padding:.85rem .9rem .85rem 1.1rem;
-  background:var(--iron);
+  background:var(--panel);
   color:var(--cream);
-  border:1px solid rgba(250,246,236,.28);
-  border-top:4px solid var(--lime);
+  border:1px solid rgba(237,233,208,.28);
+  border-top:4px solid var(--color-yellow);
   border-radius:7px;
-  box-shadow:0 16px 40px rgba(54,56,78,.28);
+  box-shadow:0 16px 40px rgba(51,46,45,.28);
 }
 .survey-sticky-prompt[hidden] { display:none; }
 .survey-sticky-prompt strong {

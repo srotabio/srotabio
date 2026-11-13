@@ -1,32 +1,65 @@
 /* SrotaBio approved website identity — consolidated 2026-09-03 */
 
 @font-face {
-  font-family: "Manrope";
-  src: url("./assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-family: "Comfortaa";
+  src: url("./assets/fonts/Comfortaa-latin-wght.woff2") format("woff2");
   font-style: normal;
-  font-weight: 300 800;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("./assets/fonts/NunitoSans-latin-wght.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("./assets/fonts/NunitoSans-Italic-latin-wght.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 1000;
   font-display: swap;
 }
 
 :root {
-  --color-cream: #faf6ec;
-  --color-iron: #61648a;
-  --color-blue: #8793b3;
-  --color-lime: #97af0e;
-  --color-slate: #98a6c7;
-  --color-background: var(--color-cream);
-  --color-text: var(--color-iron);
-  --color-text-muted: var(--color-iron);
-  --color-border: rgba(97, 100, 138, 0.2);
-  --color-border-strong: rgba(97, 100, 138, 0.42);
-  --color-on-brand: var(--color-cream);
-  --color-brand-primary: var(--color-iron);
-  --color-focus: var(--color-blue);
-  --color-success: var(--color-lime);
+  /* Primary */
+  --color-primary: #AE340E;
+  --color-green: #0EAD83;
+
+  /* Secondary */
+  --color-teal: #0EA2AD;
+  --color-berry: #AD0E2E;
+  --color-forest: #25584B;
+  --color-yellow: #E3DD6F;
+
+  /* Accent and neutrals */
+  --color-accent: #EDE9D0;
+  --color-text: #332E2D;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: "Comfortaa", sans-serif;
+  --font-body: "Nunito Sans", sans-serif;
+
+  /* Site roles mapped onto the brand palette */
+  --color-cream: var(--color-accent);
+  --color-iron: var(--color-text);
+  --color-blue: var(--color-primary);
+  --color-lime: var(--color-primary);
+  --color-background: var(--color-accent);
+  --color-text-muted: var(--color-text);
+  --color-border: rgba(51, 46, 45, 0.16);
+  --color-border-strong: rgba(51, 46, 45, 0.3);
+  --color-on-brand: var(--color-white);
+  --color-brand-primary: var(--color-primary);
+  --color-focus: var(--color-primary);
+  --color-success: var(--color-green);
   --color-error: #ffb8ad;
-  --color-header-background: rgba(250, 246, 236, 0.92);
-  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-header-background: rgba(237, 233, 208, 0.92);
+  --font-display: var(--font-heading);
   --font-size-display: clamp(3.35rem, 6.2vw, 6.4rem);
   --font-size-heading: clamp(2.35rem, 5vw, 4.8rem);
   --font-size-subheading: clamp(1.25rem, 1.8vw, 1.55rem);
@@ -85,9 +118,9 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 h1 {
@@ -131,6 +164,11 @@ h3 {
 
 .site-header,
 .hero,
+.voices,
+.approach,
+.audience,
+.care-team,
+.delivery,
 .experts,
 .waitlist,
 .site-footer {
@@ -189,11 +227,11 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 1.4rem;
-  border: 1px solid var(--color-iron);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-small);
-  background: var(--color-iron);
+  background: var(--color-primary);
   box-shadow: none;
-  color: var(--color-cream);
+  color: var(--color-white);
   cursor: pointer;
   font-weight: 750;
   line-height: 1;
@@ -203,8 +241,8 @@ h3 {
 
 .button:hover {
   transform: translateY(-2px);
-  background: var(--color-iron);
-  box-shadow: 0 0.3rem 0 var(--color-lime);
+  background: var(--color-primary);
+  box-shadow: 0 0.3rem 0 var(--color-text);
 }
 
 .button:active {
@@ -371,7 +409,7 @@ a:focus-visible {
   overflow: hidden;
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-medium);
-  background: rgba(255, 255, 255, 0.34);
+  background: var(--color-white);
   scroll-snap-align: start;
 }
 
@@ -439,6 +477,210 @@ a:focus-visible {
   color: var(--color-text-muted);
   font-size: 0.92rem;
   font-weight: 700;
+}
+
+.voices,
+.approach,
+.audience,
+.care-team,
+.delivery {
+  margin-bottom: var(--space-section-gap);
+}
+
+.voices__list,
+.card-grid,
+.approach__list,
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.voices__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+}
+
+.voice {
+  position: relative;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-medium);
+  background: var(--color-white);
+  color: var(--color-iron);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.voice::after {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 1.6rem;
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(45deg);
+  border-right: 1px solid var(--color-border-strong);
+  border-bottom: 1px solid var(--color-border-strong);
+  background: var(--color-white);
+  content: "";
+}
+
+.approach__question {
+  margin-bottom: 0.9rem;
+  color: var(--color-blue);
+  font-size: var(--font-size-subheading);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.approach h2 {
+  max-width: 20ch;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.approach h2 span {
+  color: var(--color-blue);
+}
+
+.approach__list {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 48rem;
+  counter-reset: approach;
+}
+
+.approach__list li {
+  position: relative;
+  padding-left: 3.4rem;
+  font-size: var(--font-size-body-large);
+  line-height: 1.6;
+  counter-increment: approach;
+}
+
+.approach__list li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+  content: counter(approach);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.approach__list strong {
+  display: block;
+  font-weight: 800;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.info-card,
+.team-card {
+  padding: 1.6rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-medium);
+  background: var(--color-white);
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.info-card__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 1rem;
+  fill: none;
+  stroke: var(--color-lime);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.team-card {
+  display: grid;
+  justify-items: start;
+}
+
+.team-card h3 {
+  margin-bottom: 0.3rem;
+}
+
+.team-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.timeline {
+  display: grid;
+  max-width: 48rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline li {
+  position: relative;
+  padding: 0 0 1.4rem 2.6rem;
+  font-size: var(--font-size-body-large);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.timeline li::before {
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--color-lime);
+  content: "";
+}
+
+.timeline li:not(:last-child)::after {
+  position: absolute;
+  top: 0.3em;
+  bottom: -0.3em;
+  left: calc(0.45rem - 1px);
+  width: 2px;
+  background: var(--color-border-strong);
+  content: "";
+}
+
+.delivery__actions {
+  margin-top: 2rem;
+}
+
+.delivery__actions .button {
+  gap: 0.75rem;
+}
+
+.delivery__note {
+  max-width: 48rem;
+  margin: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-body-large);
 }
 
 .waitlist {
@@ -640,6 +882,11 @@ main::after {
 }
 
 @media (max-width: 58rem) {
+  .card-grid--three,
+  .card-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .experts__grid {
     grid-auto-columns: minmax(27rem, 82%);
   }
@@ -664,10 +911,32 @@ main::after {
 @media (max-width: 40rem) {
   .site-header,
   .hero,
+  .voices,
+  .approach,
+  .audience,
+  .care-team,
+  .delivery,
   .experts,
   .waitlist,
   .site-footer {
     width: calc(100% - 2.5rem);
+  }
+
+  .voices__list,
+  .card-grid--three,
+  .card-grid--four {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    text-align: left;
+  }
+
+  .team-card .info-card__icon {
+    grid-row: span 2;
+    margin: 0;
   }
 
   .site-header {

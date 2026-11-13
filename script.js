@@ -58,3 +58,63 @@ form?.addEventListener('submit', async event => {
     button.innerHTML = original;
   }
 });
+const calendarUrl = config.calendarUrl?.trim();
+if (calendarUrl) {
+  document.querySelectorAll('[data-book-call]').forEach(block => {
+    block.querySelector('a').href = calendarUrl;
+    block.hidden = false;
+  });
+}
+const contactForm = document.querySelector('#contact-form');
+contactForm?.addEventListener('submit', async event => {
+  event.preventDefault();
+  const name = contactForm.elements.name;
+  const phone = contactForm.elements.phone;
+  const mail = contactForm.elements.email;
+  [name, phone, mail].forEach(field => {
+    field.value = field.value.trim();
+    field.removeAttribute('aria-invalid');
+  });
+  const phoneDigits = phone.value.replace(/\D/g, '');
+  let invalid;
+  if (!name.value) invalid = [name, 'Please enter your name.'];
+  else if (!phone.value && !mail.value) invalid = [phone, 'Please share a phone number or an email address.'];
+  else if (phone.value && (!/^\+?[\d\s()-]+$/.test(phone.value) || phoneDigits.length < 7 || phoneDigits.length > 15)) invalid = [phone, 'Please enter a valid phone number.'];
+  else if (mail.value && !mail.validity.valid) invalid = [mail, 'Please enter a valid email address.'];
+  if (invalid) {
+    invalid[0].setAttribute('aria-invalid', 'true');
+    showStatus(invalid[1], 'error');
+    invalid[0].focus();
+    return;
+  }
+  if (contactForm.elements._gotcha.value) return;
+  if (config.previewMode !== false || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || location.protocol === 'file:') {
+    contactForm.reset();
+    showStatus('Preview complete. Your details have not been saved or submitted.', 'success');
+    return;
+  }
+  const target = config.contactForm ?? {};
+  if (!target.action?.trim()) {
+    showStatus('This form is not open yet. Please contact us at contact@srotabio.com.', 'error');
+    return;
+  }
+  const body = new URLSearchParams();
+  body.append(target.fields.name, name.value);
+  body.append(target.fields.phone, phone.value);
+  body.append(target.fields.email, mail.value);
+  const button = contactForm.querySelector('button[type=submit]');
+  const original = button.innerHTML;
+  button.disabled = true;
+  button.textContent = 'Sending…';
+  try {
+    // Google Forms does not send CORS headers, so the response cannot be read.
+    await fetch(target.action.trim(), {method:'POST', mode:'no-cors', body});
+    contactForm.reset();
+    showStatus('Thank you. Our team will be in touch soon.', 'success');
+  } catch {
+    showStatus('We couldn’t send your details. Please try again or email contact@srotabio.com.', 'error');
+  } finally {
+    button.disabled = false;
+    button.innerHTML = original;
+  }
+});
