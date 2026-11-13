@@ -32,11 +32,6 @@ form?.addEventListener('submit', async event => {
     return;
   }
   email.removeAttribute('aria-invalid');
-  if (config.previewMode !== false || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || location.protocol === 'file:') {
-    form.reset();
-    showStatus('Preview complete. Your email has not been saved or submitted.', 'success');
-    return;
-  }
   const endpoint = config.waitlistEndpoint?.trim();
   if (!endpoint) {
     showStatus('Signups are not open yet. Please contact us at contact@srotabio.com.', 'error');
@@ -88,11 +83,6 @@ contactForm?.addEventListener('submit', async event => {
     return;
   }
   if (contactForm.elements._gotcha.value) return;
-  if (config.previewMode !== false || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) || location.protocol === 'file:') {
-    contactForm.reset();
-    showStatus('Preview complete. Your details have not been saved or submitted.', 'success');
-    return;
-  }
   const target = config.contactForm ?? {};
   if (!target.action?.trim()) {
     showStatus('This form is not open yet. Please contact us at contact@srotabio.com.', 'error');

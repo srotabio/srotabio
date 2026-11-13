@@ -1,6 +1,4 @@
 window.SROTA_SITE_CONFIG = {
-  // Keep enabled until the preview and public signup notice are approved.
-  previewMode: true,
   waitlistEndpoint: "https://api.srotabio.com/api/waitlist",
   // Calendar booking page opened by the Contact page "Book a call" button.
   calendarUrl: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ27-MP2yBSu-PCL_YuVqykr51sVgR6r61suJDb6HFLbv-5s0H1-4LhygOWoEH6NFFPOMXfxFp_p",
