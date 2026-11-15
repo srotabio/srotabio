@@ -177,6 +177,8 @@ h3 {
 }
 
 .site-header {
+  position: relative;
+  z-index: 2;
   display: flex;
   min-height: 6.25rem;
   align-items: center;
