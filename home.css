@@ -815,7 +815,7 @@ a:focus-visible {
 main {
   position: relative;
   isolation: isolate;
-  overflow-x: clip;
+  overflow: clip;
   padding-bottom: clamp(2rem, 4vw, 4rem);
 }
 
