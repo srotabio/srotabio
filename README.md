@@ -15,6 +15,10 @@ Open <http://127.0.0.1:8000>.
 ## Structure
 
 - `index.html` — homepage
+- `blog.html` — blog index
+- `blog/from-pcos-to-pmos.html` — first article
+- `blog.css` — blog layout and Nunito Sans typography
+- `assets/blog/` — article images
 - Other root HTML files — additional website pages
 - `community/register.html` — community registration page
 - `styles.css`, `home.css` — website styles
