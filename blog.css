@@ -24,6 +24,7 @@
 .post-header>.text-link { margin-bottom:2.5rem; }
 .post-header h1 { font-size:clamp(2.25rem,4.5vw,4rem); line-height:1.12; }
 .post-header .eyebrow { margin-bottom:1rem; }
+.post-byline { margin-top:1rem; font-size:.9375rem; line-height:1.5; }
 .post-contents {
   padding:clamp(1.25rem,3vw,2rem);
   margin-block:2.5rem 3rem;
