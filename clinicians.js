@@ -4,6 +4,8 @@
   const otherField = form.querySelector('[data-other-referral]');
   const button = form.querySelector('button[type=submit]');
   const status = document.querySelector('#clinicians-form-status');
+  const heading = document.querySelector('#clinicians-form-heading');
+  const message = document.querySelector('#clinicians-form-message');
 
   function updateReferralField() {
     const selectedOther = referral.value === 'other';
@@ -78,8 +80,10 @@
       const response = await fetch(endpoint, { method: 'POST', body });
       if (!response.ok) throw new Error('Inquiry unavailable');
       form.reset();
-      updateReferralField();
-      showStatus('Thank you. Our team will be in touch soon.', 'success');
+      form.remove();
+      heading.textContent = 'Thank you for getting in touch!';
+      message.textContent = 'Our team will reach out soon.';
+      heading.focus();
     } catch {
       showStatus('We couldn’t send your details. Please try again or email contact@srotabio.com.', 'error');
     } finally {
