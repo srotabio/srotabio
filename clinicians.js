@@ -57,28 +57,38 @@
       return showFieldError(whatsapp, 'Please enter a valid WhatsApp number.');
     }
 
-    const endpoint = window.SROTA_SITE_CONFIG?.clinicianInquiryEndpoint?.trim();
+    const target = window.SROTA_SITE_CONFIG?.clinicianInquiryForm;
+    const endpoint = target?.action?.trim();
     if (!endpoint) {
       showStatus('Please send your inquiry to contact@srotabio.com.', 'error');
       return;
     }
 
-    const body = new URLSearchParams({
-      name: name.value,
-      email: email.value,
-      whatsapp: whatsapp.value,
-    });
-    if (referral.value) body.set('referral', referral.value);
-    if (!otherReferral.disabled && otherReferral.value.trim()) {
-      body.set('otherReferral', otherReferral.value.trim());
+    const { fields, referralChoices } = target;
+    const body = new URLSearchParams({ [fields.name]: name.value });
+    if (email.value) body.set(fields.email, email.value);
+    if (whatsapp.value) body.set(fields.whatsapp, whatsapp.value);
+    if (referral.value) {
+      const choice = referralChoices[referral.value];
+      const details = otherReferral.value.trim();
+      if (choice) {
+        body.set(fields.referral, choice);
+      } else {
+        const otherAnswer = referral.value === 'other'
+          ? (details ? `Other: ${details}` : 'Other')
+          : referral.value;
+        body.set(fields.referral, '__other_option__');
+        body.set(`${fields.referral}.other_option_response`, otherAnswer);
+      }
     }
 
     showStatus('', '');
     button.disabled = true;
     button.textContent = 'Sending…';
     try {
-      const response = await fetch(endpoint, { method: 'POST', body });
-      if (!response.ok) throw new Error('Inquiry unavailable');
+      // Google Forms does not expose the response to scripts on this origin.
+      const response = await fetch(endpoint, { method: 'POST', mode: 'no-cors', body });
+      if (response.type !== 'opaque' && !response.ok) throw new Error('Inquiry unavailable');
       form.reset();
       form.remove();
       heading.textContent = 'Thank you for getting in touch!';
